@@ -1,26 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { About } from './components/About';
+import { Add } from './components/Add';
+import { Add2 } from './components/Add2';
+import { Home } from './components/Home';
+import { Navigation } from './components/Navigation';
+import { NotFound404 } from './components/NotFound404';
+import { Post } from './components/Post';
+
+const App: React.FC = () => {
+	return (
+		<Router>
+			<Navigation></Navigation>
+			<Switch>
+				<Route path='/' exact>
+					<Home></Home>
+				</Route>
+				<Route path='/about'>
+					<About></About>
+				</Route>
+				<Route path='/post/:id'>
+					<Post></Post>
+				</Route>
+				<Route path='/add/:a/:b'>
+					<Add></Add>
+				</Route>
+				<Route path='/add'>
+					<Add2></Add2>
+				</Route>
+				<Route path='*'>
+					<NotFound404></NotFound404>
+				</Route>
+			</Switch>
+		</Router>
+	);
+};
 
 export default App;
