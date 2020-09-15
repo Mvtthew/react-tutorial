@@ -7,6 +7,7 @@ import { Add2 } from './components/Add2';
 import { Home } from './components/Home';
 import { Navigation } from './components/Navigation';
 import { NotFound404 } from './components/NotFound404';
+import { PhotosList } from './components/PhotosList';
 import { Post } from './components/Post';
 
 const App: React.FC = () => {
@@ -28,6 +29,9 @@ const App: React.FC = () => {
 				</Route>
 				<Route path='/add'>
 					<Add2></Add2>
+				</Route>
+				<Route path='/photos'>
+					<PhotosList></PhotosList>
 				</Route>
 				<Route path='*'>
 					<NotFound404></NotFound404>
