@@ -17,6 +17,8 @@ export const Navigation: React.FC = () => {
 			<Link to='/about'>About</Link>
 			<br />
 			<Link to='/photos'>Photos list</Link>
+			<br />
+			<Link to='/cats?amount=14'>Cat photos list (14)</Link>
 		</div>
 	);
 };
